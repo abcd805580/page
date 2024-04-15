@@ -1,23 +1,25 @@
 {
     "version": 2,
-    "builds": [
-        {
-            "src": "frontend/index.html",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "api/**/*.js",
-            "use": "@vercel/node"
-        }
-    ],
     "routes": [
         {
             "src": "/api/(.*)",
             "dest": "/api/$1"
         },
         {
+            "src": "^/static/(.*)",
+            "dest": "/static/$1"
+        },
+        {
             "src": "/(.*)",
-            "dest": "/frontend/$1"
+            "handlers": [
+                "filesystem"
+            ],
+            "continue": true
+        },
+        {
+            "src": "/.*",
+            "dest": "/index.html",
+            "status": 200
         }
     ]
 }
