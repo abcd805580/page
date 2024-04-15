@@ -26,25 +26,26 @@ class PersonalProfile extends React.Component {
 
   render() {
     return (
-      <div style={{ padding: "1rem 0" }}>
+      <div style={{ padding: "1rem 0", transform: "scale(1.1)", transformOrigin: "top left" }}>
         <Breadcrumb style={{ margin: '16px 0' }}>
           <Breadcrumb.Item>Site</Breadcrumb.Item>
           <Breadcrumb.Item>About</Breadcrumb.Item>
         </Breadcrumb>
         <br />
-        <Card title="All about me" style={{ width: '50%' }}>
+        <Card title="關於我" style={{ width: 'calc(50% * 1.1)' /* Adjust width accordingly if necessary */ }}>
           <Row gutter={10}>
             <Col span={6}>
-              <Image src={img} />
+              <Image src={img} alt="Your Image Description" />
             </Col>
             <Col span={18}>
-              <Title level={3}>呂晟維</Title>
-              <p>大家好! 我來自台大資管所的ANTSlab，大學畢業於中央資管，雖然大家都說孫媽很恐怖，但偷偷告訴你，其實孫媽不恐怖而是超~級~恐~怖~。還有，孫媽她上碩班選修課的時候好親切，有種反差萌的感覺，想到不吧。</p>
+              <Title level={3}>林聖諺</Title>
+              <p>大家好!我的綽號叫feast</p>
+              {/* Add more content here as needed */}
             </Col>
           </Row>
         </Card>
+        {/* You can add more content components here */}
       </div>
-
     );
   }
 }

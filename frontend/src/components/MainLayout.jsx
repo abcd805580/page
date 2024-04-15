@@ -75,23 +75,27 @@ class MainLayout extends React.Component {
       <Layout style={{ minHeight: '100vh' }}>
         <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
           <Title style={{ color: 'white', textAlign: 'center', width: '100%', justifyContent: 'center' }}>
-            Hack.Me
+            feast
           </Title>
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+            <Menu.Item key="5" icon={<InfoOutlined />}>
+              {/* 關於我 */}
+              <Link to="/">HOME</Link>
+            </Menu.Item>
             <Menu.Item key="1" icon={<InfoOutlined />}>
               {/* 關於我 */}
-              <Link to="/">關於我</Link>
+              <Link to="/">ABOUT</Link>
             </Menu.Item>
             <Menu.Item key="2" icon={<WechatFilled />}>
               {/* 留言板 */}
-              <Link to="/forum">留言板</Link>
+              <Link to="/forum">USER</Link>
             </Menu.Item>
             <Menu.Item key="3" icon={<LoginOutlined />}>
-              <Link to="/loginRegister">註冊/登入</Link>
+              <Link to="/loginRegister">Create User</Link>
             </Menu.Item>
             <Menu.Item key="4">
               <Tag icon={<TwitterOutlined />} color="#55acee">
-                造訪人數: {this.state.visitCount}
+                目前累積造訪人數: 666 {/* this.state.visitCount*/}
               </Tag>
             </Menu.Item>
           </Menu>
@@ -115,7 +119,7 @@ class MainLayout extends React.Component {
             </Routes>
 
           </Content>
-          <Footer style={{ textAlign: 'center' }}>Weber Lu ©2022 from NTUMIS</Footer>
+          <Footer style={{ textAlign: 'center' }}>這裡是底部!</Footer>
         </Layout>
       </Layout>
     );
